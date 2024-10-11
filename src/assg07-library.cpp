@@ -93,6 +93,12 @@ void swap(int& a, int& b)
   b = temp;
 }
 
+void swap(char& a, char& b)
+{
+  char temp = a;
+  a = b;
+  b = temp;
+}
 
 /** @brief sort three values in ascending order
  *
@@ -133,3 +139,24 @@ void threeSort(int& a, int& b, int& c)
     swap(a, b);
   }
 }
+void threeSort(char& a, char& b, char& c)
+{
+  // swap a, b if out of order
+  if (a > b)
+  {
+    swap(a, b);
+  }
+
+  // swap b, c if out of order
+  if (b > c)
+  {
+    swap(b, c);
+  }
+
+  // check a, b again after swap
+  if (a > b)
+  {
+    swap(a, b);
+  }
+}
+

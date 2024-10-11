@@ -19,4 +19,5 @@ using namespace std;
 void swap(int& a, int& b);
 void threeSort(int& a, int& b, int& c);
 int nextFibonacciNumber(bool resetSequence = false);
-
+void swap(char& a, char& b);
+void threeSort(char& a, char& b, char& c);
