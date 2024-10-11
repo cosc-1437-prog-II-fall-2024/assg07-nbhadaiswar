@@ -48,8 +48,26 @@ using namespace std;
  *    of the sequence again.
  */
 // your implementation of task 1 nextFibonacciNumber() goes here
+int nextFibonacciNumber(bool resetSequence = false)
+{
+  static int fib_0 = 0;
+  static int fib_1 = 1;
 
+  // If resetSequence is true, reset the sequence to initial values
+  if (resetSequence)
+  {
+    fib_0 = 0;
+    fib_1 = 1;
+    return fib_1;
+  }
 
+  // Calculate the next Fibonacci number
+  int next = fib_0 + fib_1;
+  fib_0 = fib_1;
+  fib_1 = next;
+
+  return fib_1;
+}
 /** @brief swap two given integer values in memory
  *
  * Given two integer values, swap their locations
