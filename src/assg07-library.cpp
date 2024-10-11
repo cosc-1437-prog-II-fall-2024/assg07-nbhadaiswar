@@ -48,8 +48,26 @@ using namespace std;
  *    of the sequence again.
  */
 // your implementation of task 1 nextFibonacciNumber() goes here
+int nextFibonacciNumber(bool resetSequence = false)
+{
+  static int fib_0 = 0;
+  static int fib_1 = 1;
 
+  // If resetSequence is true, reset the sequence to initial values
+  if (resetSequence)
+  {
+    fib_0 = 0;
+    fib_1 = 1;
+    return fib_1;
+  }
 
+  // Calculate the next Fibonacci number
+  int next = fib_0 + fib_1;
+  fib_0 = fib_1;
+  fib_1 = next;
+
+  return fib_1;
+}
 /** @brief swap two given integer values in memory
  *
  * Given two integer values, swap their locations
@@ -75,6 +93,12 @@ void swap(int& a, int& b)
   b = temp;
 }
 
+void swap(char& a, char& b)
+{
+  char temp = a;
+  a = b;
+  b = temp;
+}
 
 /** @brief sort three values in ascending order
  *
@@ -110,6 +134,50 @@ void threeSort(int& a, int& b, int& c)
 
   // it is still possible after this "bubble pass" that a and b are out of
   // order, so check and swap them if needed
+  if (a > b)
+  {
+    swap(a, b);
+  }
+}
+void threeSort(char& a, char& b, char& c)
+{
+  // swap a, b if out of order
+  if (a > b)
+  {
+    swap(a, b);
+  }
+
+  // swap b, c if out of order
+  if (b > c)
+  {
+    swap(b, c);
+  }
+
+  // check a, b again after swap
+  if (a > b)
+  {
+    swap(a, b);
+  }
+}
+
+// task 3 implementation
+void swap(string& a, string& b)
+{
+  string temp = a;
+  a = b;
+  b = temp;
+}
+
+void threeSort(string& a, string& b, string& c)
+{
+  if (a > b)
+  {
+    swap(a, b);
+  }
+  if (b > c)
+  {
+    swap(b, c);
+  }
   if (a > b)
   {
     swap(a, b);
