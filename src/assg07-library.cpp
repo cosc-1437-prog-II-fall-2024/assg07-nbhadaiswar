@@ -160,3 +160,26 @@ void threeSort(char& a, char& b, char& c)
   }
 }
 
+// task 3 implementation
+void swap(string& a, string& b)
+{
+  string temp = a;
+  a = b;
+  b = temp;
+}
+
+void threeSort(string& a, string& b, string& c)
+{
+  if (a > b)
+  {
+    swap(a, b);
+  }
+  if (b > c)
+  {
+    swap(b, c);
+  }
+  if (a > b)
+  {
+    swap(a, b);
+  }
+}

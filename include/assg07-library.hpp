@@ -21,3 +21,5 @@ void threeSort(int& a, int& b, int& c);
 int nextFibonacciNumber(bool resetSequence = false);
 void swap(char& a, char& b);
 void threeSort(char& a, char& b, char& c);
+void swap(std::string& a, std::string& b);
+void threeSort(std::string& a, std::string& b, std::string& c);

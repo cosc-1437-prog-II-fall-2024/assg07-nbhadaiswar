@@ -21,7 +21,7 @@ using namespace std;
 // once defined they will enable the tests declared below for each task
 #define task1
 #define task2
-#undef task3
+#define task3
 #define predefined
 
 /** nextFibonacciNumber() test cases
